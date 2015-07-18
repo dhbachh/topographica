@@ -168,6 +168,7 @@ class VisualInputModel(SensoryModel):
             image_folder = 'images/shouval' if self.dataset=='Nature' \
                            else 'images/mcgill/foliage_a_combined' if self.dataset=='FoliageA' \
                            else 'images/mcgill/foliage_b_combined' if self.dataset=='FoliageB' \
+                           else self.data if len(self.data)>1 \
                            else None
             return PatternCoordinatorImages(image_folder, **dict(params, **overrides))()
 
